@@ -1,44 +1,51 @@
 import streamlit as st
-import requests
+import yfinance as yf
 import pandas as pd
-from datetime import datetime
+from vega_datasets import data
+import plotly.graph_objects as go
+
+st.sidebar.title('Yahoo Stock Data :part_alternation_mark:')
 
 # Set page title
-st.set_page_config(page_title="Crypto Historical Data")
 
-# Add sidebar title
-st.sidebar.title("Crypto Historical Data")
+# Define the user inputs
+tickers = st.sidebar.selectbox('Select Tickers', ['AAPL', 'MSFT', 'GOOG', 'AMZN', 'TSLA', 'NFLX'], index=0,  format_func=lambda x: x.upper())
+start_date = st.sidebar.date_input('Start date', value=pd.to_datetime('2022-03-22'))
+end_date = st.sidebar.date_input('End date', value=pd.to_datetime('2023-03-21'))
 
-# Add sidebar subtitle
-st.sidebar.subheader("Select Currency and Time Frame")
+# Fetch stock data from Yahoo
+data = yf.download(tickers, start=start_date, end=end_date)
 
-# Add a list of available currencies
-selected_currency = st.sidebar.selectbox("Select currency:", ["BTC", "ETH", "XRP", "LTC", "BCH"])
+# Display stock data
+st.header(f'Stock data for :red[{tickers}]')
+st.write(data)
 
-# Add start and end date text inputs
-start_date = st.sidebar.text_input("Start date (YYYY-MM-DD):", "2022-01-01")
-end_date = st.sidebar.text_input("End date (YYYY-MM-DD):", "2022-12-31")
 
-# Convert start_date and end_date to datetime objects
-start_datetime = datetime.strptime(start_date, "%Y-%m-%d")
-end_datetime = datetime.strptime(end_date, "%Y-%m-%d")
+st.title('Data visualization :zap:')
 
-# Convert datetime objects to timestamps
-start_timestamp = int(start_datetime.timestamp())
-end_timestamp = int(end_datetime.timestamp())
+# Set up plotly figure
+fig = go.Figure()
 
-# Get historical data using cryptocompare API
-url = f"https://min-api.cryptocompare.com/data/v2/histoday?fsym={selected_currency}&tsym=USD&limit=2000&toTs={end_timestamp}&api_key=c47a0568529639696b2775baa6f1afb21791c5849a7ca8edf33e361c864b2393"
-response = requests.get(url)
-data = response.json()["Data"]["Data"]
 
-# Clean up the data and convert to pandas DataFrame
-df = pd.DataFrame(data)
-df["time"] = pd.to_datetime(df["time"], unit="s")
-df = df[df["time"] >= start_datetime]
-df.set_index("time", inplace=True)
 
-# Show the data using Streamlit
-st.title(f"{selected_currency} Historical Data")
-st.write(df)
+# Add candlestick trace for stock prices
+fig.add_trace(go.Candlestick(x=data.index,
+                             open=data['Open'],
+                             high=data['High'],
+                             low=data['Low'],
+                             close=data['Close'],
+                             name="Stock Prices"))
 
+# Add moving average trace for 50-day period
+fig.add_trace(go.Scatter(x=data.index,
+                         y=data['Close'],
+                         mode='lines',
+                         name='Moving Average (50 days)'))
+
+# Add plotly layout
+fig.update_layout(title=f"{tickers} Stock Prices",
+                  xaxis_title="Date",
+                  yaxis_title="Price (USD)")
+
+# Render plotly figure using streamlit
+st.plotly_chart(fig)
