@@ -15,11 +15,10 @@ colored_header(
 
 # Set up social media icons
 with st.container():
-    col1, col2, col3 , col4= st.columns(4)
+    col1, col2, col3 = st.columns(3)
     col1.markdown("[![Twitter](https://img.shields.io/twitter/follow/shadowYEM?style=social)](https://twitter.com/shadowYEM)")
-    col2.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=social&logo=linkedin)](https://www.linkedin.com/in/linkedin)")
-    col3.markdown("[![GitHub](https://img.shields.io/github/followers/shadowYEM?style=social)](https://github.com/shadowYEM)")
-    col4.markdown("[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=social&logo=telegram)](https://t.me/Shadows_Garden)")
+    col2.markdown("[![GitHub](https://img.shields.io/github/followers/shadowYEM?style=social)](https://github.com/shadowYEM)")
+    col3.markdown("[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=social&logo=telegram)](https://t.me/Shadows_Garden)")
 
 
 colored_header(
