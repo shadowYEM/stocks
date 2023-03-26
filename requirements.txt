@@ -1,3 +1,4 @@
 yfinance
 vega-datasets
 plotly
+streamlit-extras
