@@ -49,3 +49,12 @@ fig.update_layout(title=f"{tickers} Stock Prices",
 
 # Render plotly figure using streamlit
 st.plotly_chart(fig)
+
+# Add download button to download data
+def download_data():
+    csv = data.to_csv(index=False)
+    b64 = base64.b64encode(csv.encode()).decode()
+    href = f'<a href="data:file/csv;base64,{b64}" download="stock_data.csv">Download CSV file</a>'
+    return href
+
+st.markdown(download_data(), unsafe_allow_html=True)
