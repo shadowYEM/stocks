@@ -4,7 +4,7 @@ import pandas as pd
 from vega_datasets import data
 import plotly.graph_objects as go
 
-st.sidebar.title('Yahoo Stock Data :part_alternation_mark:')
+st.sidebar.title('Stock Data :part_alternation_mark:')
 
 # Set page title
 
