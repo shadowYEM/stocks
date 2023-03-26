@@ -3,6 +3,15 @@ import yfinance as yf
 import pandas as pd
 from vega_datasets import data
 import plotly.graph_objects as go
+from streamlit_extras.colored_header import colored_header
+
+
+
+colored_header(
+    label="My project to obtain financial stock data",
+    description="This is a description",
+    color_name="orange-70",
+)
 
 st.sidebar.title('Stock Data :part_alternation_mark:')
 
