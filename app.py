@@ -40,7 +40,7 @@ data = yf.download(tickers, start=start_date, end=end_date)
 
 # Display stock data
 st.header(f'Stock data for :red[{tickers}]')
-st.write(data)
+st.dataframe(data, width=1000)
 
 
 st.title('Data visualization :zap:')
