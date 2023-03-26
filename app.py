@@ -4,14 +4,27 @@ import pandas as pd
 from vega_datasets import data
 import plotly.graph_objects as go
 from streamlit_extras.colored_header import colored_header
+from streamlit_extras.mention import mention
 
-
-
+# Set page title
 colored_header(
     label="My project to obtain financial stock data",
-    description="This is a description",
+    description="",
     color_name="orange-70",
 )
+
+mention(
+    label="Twitter",
+    icon="twitter",  
+    url="https://twitter.com/shadowYEM",
+    
+)
+mention(
+    label="GitHub",
+    icon="GitHub",  
+    url="https://github.com/shadowYEM",
+)
+
 
 st.sidebar.title('Stock Data :part_alternation_mark:')
 
