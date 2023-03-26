@@ -8,22 +8,26 @@ from streamlit_extras.mention import mention
 
 # Set page title
 colored_header(
+    label="Hi , i'm RASHEED AL-QADHI ",
+    description="",
+    color_name="orange-70",
+)
+
+# Set up social media icons
+with st.container():
+    col1, col2, col3 , col4= st.columns(4)
+    col1.markdown("[![Twitter](https://img.shields.io/twitter/follow/shadowYEM?style=social)](https://twitter.com/shadowYEM)")
+    col2.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=social&logo=linkedin)](https://www.linkedin.com/in/linkedin)")
+    col3.markdown("[![GitHub](https://img.shields.io/github/followers/shadowYEM?style=social)](https://github.com/shadowYEM)")
+    col4.markdown("[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=social&logo=telegram)](https://t.me/Shadows_Garden)")
+
+
+colored_header(
     label="My project to obtain financial stock data",
     description="",
     color_name="orange-70",
 )
 
-mention(
-    label="Twitter",
-    icon="twitter",  
-    url="https://twitter.com/shadowYEM",
-    
-)
-mention(
-    label="GitHub",
-    icon="GitHub",  
-    url="https://github.com/shadowYEM",
-)
 
 
 st.sidebar.title('Stock Data :part_alternation_mark:')
