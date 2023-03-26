@@ -51,3 +51,20 @@ fig.update_layout(title=f"{tickers} Stock Prices",
 st.plotly_chart(fig)
 
 # Add download button to download data
+
+
+@st.cache_resource
+def convert_df(df):
+    st.title(f'Data :red[{tickers}] Download ')
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
+
+csv = convert_df(data)
+
+st.download_button(
+    label="Download data as CSV",
+    data=csv,
+    file_name=f'{tickers}.csv',
+    mime='text/csv',
+)
+
