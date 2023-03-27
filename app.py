@@ -18,7 +18,7 @@ with st.container():
     col1, col2, col3 = st.columns(3)
     col1.markdown("[![Twitter](https://img.shields.io/twitter/follow/shadowYEM?style=social)](https://twitter.com/shadowYEM)")
     col2.markdown("[![GitHub](https://img.shields.io/github/followers/shadowYEM?style=social)](https://github.com/shadowYEM)")
-    col3.markdown("[![Telegram](https://img.shields.io/badge/-Telegram-white?color=white&logo=telegram&logoColor=blue)](https://t.me/Shadows_Garden)")
+    col3.markdown("[![Telegram](https://img.shields.io/badge/-Telegram-white?color=white&logo=telegram&logoColor=blue)](https://t.me/ShadowYE)")
     # col4.markdown("[![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&color=white&logo=kaggle&logoColor=blue)](https://kaggle.com/shadowYE)")
 
 
@@ -35,7 +35,8 @@ st.sidebar.title('Stock Data :part_alternation_mark:')
 # Set page title
 
 # Define the user inputs
-tickers = st.sidebar.selectbox('Select Tickers', ['AAPL', 'MSFT', 'GOOG', 'AMZN', 'TSLA', 'NFLX'], index=0,  format_func=lambda x: x.upper())
+tickers = st.sidebar.selectbox('Select Tickers', ['AAPL','MSFT', 'AMZN', 'GOOGL', 'META', 'TSLA', 'BRK.A', 'BRK.B', 
+                                                  'NVDA', 'JPM', 'JNJ', 'V', 'PG', 'DIS','INTC', 'PFE', 'KO', 'XOM', 'MCD', 'IBM' ], index=0,  format_func=lambda x: x.upper())
 start_date = st.sidebar.date_input('Start date', value=pd.to_datetime('2022-03-22'))
 end_date = st.sidebar.date_input('End date', value=pd.to_datetime('2023-03-21'))
 
