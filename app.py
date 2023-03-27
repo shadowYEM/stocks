@@ -18,7 +18,8 @@ with st.container():
     col1, col2, col3 = st.columns(3)
     col1.markdown("[![Twitter](https://img.shields.io/twitter/follow/shadowYEM?style=social)](https://twitter.com/shadowYEM)")
     col2.markdown("[![GitHub](https://img.shields.io/github/followers/shadowYEM?style=social)](https://github.com/shadowYEM)")
-    col3.markdown("[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=social&logo=telegram)](https://t.me/Shadows_Garden)")
+    col3.markdown("[![Telegram](https://img.shields.io/badge/-Telegram-white?color=white&logo=telegram&logoColor=blue)](https://t.me/Shadows_Garden)")
+    # col4.markdown("[![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&color=white&logo=kaggle&logoColor=blue)](https://kaggle.com/shadowYE)")
 
 
 colored_header(
