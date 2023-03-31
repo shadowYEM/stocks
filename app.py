@@ -10,10 +10,10 @@ from datetime import date
 
 # Set page title
 # تحديد الكلمات المفتاحية المستهدفة لموقعك
-keywords = ["Rasheed al-qadhi", "Rasheed al qadhi", "project to obtain the stock market data", "project for obtain financial stock data", "project to obtain financial stock data"]
+keywords = ["Rasheed Al-qadhi", "Rasheed al qadhi", "project to obtain the stock market data"]
 
 # إنشاء عنوان صفحة موقعك مع تضمين الكلمات المفتاحية
-st.title("Hello, my name is Rasheed Al-Qadhi. This is a project to obtain the stock market data .")
+st.title("Hello, my name is RASHEED AL-QADHI. This is a project to obtain the stock market data .")
 
 # إنشاء محتوى الصفحة مع تضمين الكلمات المفتاحية
 st.write("Streamlit is an open-source app framework for Machine Learning and Data Science teams. Create beautiful web apps in minutes. The software libraries used in the project are streamlit , yfinance, pandas, vega_datasets, plotly, streamlit_extras")
