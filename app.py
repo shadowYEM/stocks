@@ -35,7 +35,7 @@ with st.container():
 
 
 colored_header(
-    label="My project to obtain financial stock data",
+    label="A project containing 20 stock exchange shares",
     description="",
     color_name="orange-70",
 )
