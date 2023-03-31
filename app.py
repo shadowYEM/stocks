@@ -7,11 +7,21 @@ from streamlit_extras.colored_header import colored_header
 from streamlit_extras.mention import mention
 
 # Set page title
-colored_header(
-    label="Hi , i'm RASHEED AL-QADHI ",
-    description="",
-    color_name="orange-70",
-)
+# تحديد الكلمات المفتاحية المستهدفة لموقعك
+keywords = ["Rasheed al-qadhi", "Rasheed al qadhi", "project to obtain the stock market data", "project for obtain financial stock data", "project to obtain financial stock data"]
+
+# إنشاء عنوان صفحة موقعك مع تضمين الكلمات المفتاحية
+st.title("Hello, my name is Rasheed Al-Qadhi. This is a project to obtain the stock market data .")
+
+# إنشاء محتوى الصفحة مع تضمين الكلمات المفتاحية
+st.write("Streamlit is an open-source app framework for Machine Learning and Data Science teams. Create beautiful web apps in minutes. The software libraries used in the project are streamlit , yfinance, pandas, vega_datasets, plotly, streamlit_extras")
+
+
+# colored_header(
+#     label="Hi , i'm RASHEED AL-QADHI ",
+#     description="",
+#     color_name="orange-70",
+# )
 
 # Set up social media icons
 with st.container():
@@ -37,8 +47,10 @@ st.sidebar.title('Stock Data :part_alternation_mark:')
 # Define the user inputs
 tickers = st.sidebar.selectbox('Select Tickers', ['AAPL','MSFT', 'AMZN', 'GOOGL', 'META', 'TSLA', 'BRK.A', 'BRK.B', 
                                                   'NVDA', 'JPM', 'JNJ', 'V', 'PG', 'DIS','INTC', 'PFE', 'KO', 'XOM', 'MCD', 'IBM' ], index=0,  format_func=lambda x: x.upper())
+today = date.today()
+
 start_date = st.sidebar.date_input('Start date', value=pd.to_datetime('2022-03-22'))
-end_date = st.sidebar.date_input('End date', value=pd.to_datetime('2023-03-21'))
+end_date = st.sidebar.date_input('End date', value=today)
 
 # Fetch stock data from Yahoo
 data = yf.download(tickers, start=start_date, end=end_date)
