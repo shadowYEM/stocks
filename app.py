@@ -19,11 +19,11 @@ st.title("Hello, my name is RASHEED AL-QADHI. This is a project to obtain the st
 st.write("Streamlit is an open-source app framework for Machine Learning and Data Science teams. Create beautiful web apps in minutes. The software libraries used in the project are streamlit , yfinance, pandas, vega_datasets, plotly, streamlit_extras")
 
 
-# colored_header(
-#     label="Hi , i'm RASHEED AL-QADHI ",
-#     description="",
-#     color_name="orange-70",
-# )
+colored_header(
+    label="Hi , i'm RASHEED AL-QADHI ",
+    description="",
+    color_name="orange-70",
+)
 
 # Set up social media icons
 with st.container():
