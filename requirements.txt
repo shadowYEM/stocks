@@ -1,4 +1,4 @@
-yfinance
-vega-datasets
-plotly
-streamlit-extras
+yfinance==0.2.14
+vega-datasets==0.9.0
+plotly==5.14.0
+streamlit-extras==0.2.7
