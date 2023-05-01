@@ -10,14 +10,14 @@ Project demo : https://shadow.streamlit.app/
 
 To run the project on your device:
 
-https://github.com/shadowYEM/stocks/
+```https://github.com/shadowYEM/stocks/```
 
-cd stocks
+```cd stocks```
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 Finally, to run the project in the terminal, do the following:
 
-streamlit run app.py
+```streamlit run app.py```
 
 enjoy 😎
