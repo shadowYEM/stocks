@@ -8,4 +8,16 @@ With an interactive display of the data, and downloading the data for which the 
 
 Project demo : https://shadow.streamlit.app/
 
+To run the project on your device:
+
+https://github.com/shadowYEM/stocks/
+
+cd stocks
+
+pip install -r requirements.txt
+
+Finally, to run the project in the terminal, do the following:
+
+streamlit run app.py
+
 enjoy 😎
